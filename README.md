@@ -29,6 +29,14 @@ The app uses a Supabase table called `activities`.
 | price | int4 |
 | date | date |
 
+## How It Works
+
+The app is built with React and uses Supabase to store family activities. The `useTable` hook loads activity records from the `activities` table when the page opens. React displays the activities using `map()` and shows the total number of activities on the page.
+
 ## Wireframe
 See `wireframe.png` for the app layout.
 ![Family Activities Wireframe](./wireframe.png)
+
+## Team
+
+[Pod Capstone Plan](https://docs.google.com/document/d/1pAHUoA0O_Pil3cmCH792l70D3B6yPkERFIBjfPNTCwY/edit?tab=t.0)
