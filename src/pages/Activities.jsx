@@ -8,7 +8,13 @@ function Activities( {data, error}) {
             <p>{data.length} activities found</p>
 
             {data.map((activity) => (
-                <p key={activity.id}>{activity.activity_name}</p>
+                <div className="activity-card" key={activity.id}>
+                    <h2>{activity.activity_name}</h2>
+                    <p>Location: {activity.location}</p>
+                    <p>Price: ${activity.price}</p>
+                    <p>Date: {activity.date}</p>
+                </div>
+                
             ))}
         </main>
     )
