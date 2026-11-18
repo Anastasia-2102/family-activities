@@ -1,26 +1,30 @@
+import { Routes, Route, NavLink } from 'react-router'
+import Home from './pages/Home.jsx'
+import Activities from './pages/Activities.jsx'
+import AddActivity from './pages/AddActivity.jsx'
 import useTable from './useTable.js'
+
 
 function App() {
   const { data, error } = useTable("activities")
-  console.log(data.length)
   
   return (
-    <main>
-      <h1>Family Activities</h1>
-      <p>{error}</p>
-      <p>{data.length} activities found</p>
-      {data.map((activity) => (
-        <p key={activity.id}>{activity.activity_name}</p>
-      ))}
-
-      <h2>Search</h2>
-
-      <h2>Filters</h2>
-
-      <h2>Add Activity</h2>
-
-      <h2>Activities</h2>
-    </main>
+    <>
+    <nav>
+      <NavLink to="/" end>Home</NavLink> {' | '}
+      <NavLink to="/activities">Activities</NavLink> {' | '}
+      <NavLink to="/add-activity">Add Activity</NavLink>
+    </nav>
+      
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route 
+        path="/activities" 
+        element={ <Activities data={data} error={error} />}
+      />
+      <Route path="/add-activity" element={<AddActivity />} />
+    </Routes>
+    </>
   )
 }
 
