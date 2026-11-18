@@ -6,7 +6,7 @@ import useTable from './useTable.js'
 
 
 function App() {
-  const { data, error } = useTable("activities")
+  const { data, error, reload } = useTable("activities")
   
   return (
     <>
@@ -22,7 +22,10 @@ function App() {
         path="/activities" 
         element={ <Activities data={data} error={error} />}
       />
-      <Route path="/add-activity" element={<AddActivity />} />
+      <Route 
+        path="/add-activity" 
+        element={<AddActivity reload={reload} />} 
+      />
     </Routes>
     </>
   )

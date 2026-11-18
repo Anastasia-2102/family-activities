@@ -182,3 +182,21 @@
     border-right-color: var(--border);
   }
 }
+
+nav {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+nav a {
+  color: var(--text-h);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a.active {
+  color: var(--accent);
+  text-decoration: underline;
+}
