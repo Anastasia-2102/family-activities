@@ -6,6 +6,7 @@ import useTable from './useTable.js'
 
 
 function App() {
+  // Get activities from Supabase and provide a function to reload them
   const { data, error, reload } = useTable("activities")
   
   return (

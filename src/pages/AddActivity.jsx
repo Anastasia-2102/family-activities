@@ -7,6 +7,10 @@ function AddActivity({ reload }) {
     const [location, setLocation] = useState('')
     const [price, setPrice] = useState('')
     const [date, setDate] = useState('')
+    const [error, setError] = useState('')
+    const [success, setSuccess] = useState('')
+
+    // Handle form submission and save the new activity to Supabase
     const handleSubmit = async (event) => {
         event.preventDefault()
 
@@ -21,42 +25,52 @@ function AddActivity({ reload }) {
             }
         ])
 
+    // Display an error message if the activity cannot be saved
     if (error) {
-        console.log(error)
+        setError(error.message)
     return
-  }
+}
 
+    // Refresh the activity list and show a success message
     reload()
-    navigate('/activities')
+    setSuccess('Activity added successfully!')
 }
     return (
         <main className="add-activity-page">
             <h1>Add a Family Activity</h1>
             <p>Share a new activity for your family to enjoy!</p>
+
+            {error && <p className="error-message">{error}</p>}
+            {success && <p className="success-message">{success}</p>}
+
             <form onSubmit={handleSubmit}>
                 <label>Activity Name:</label>
                 <input
                     type="text"
                     value={activityName}
                     onChange={(event) => setActivityName(event.target.value)}
+                    required
                 />
                 <label>Location:</label>
                 <input
                     type="text"
                     value={location}
                     onChange={(event) => setLocation(event.target.value)}
+                    required
                 />
                 <label>Price:</label>
                 <input 
                     type="number"
                     value={price}
                     onChange={(event) => setPrice(event.target.value)}
+                    required
                 />
                 <label>Date:</label>
                 <input
                     type="date"
                     value={date}
                     onChange={(event) => setDate(event.target.value)}
+                    required
                 />
                 <button type="submit">Add Activity</button>
             </form>

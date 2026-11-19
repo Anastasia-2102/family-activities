@@ -6,6 +6,7 @@ function useTable(table) {
   const [error, setError] = useState("")
   const [version, setVersion] = useState(0)
 
+  // Fetch data from the Supabase table when the table or version changes
   useEffect(() => {
     const load = async () => {
       const result = await supabase.from(table).select()
@@ -18,6 +19,7 @@ function useTable(table) {
     load()
   }, [table, version])
 
+  // Reload the data by changing the version
   const reload = () => {
     setVersion(version + 1)
   }
