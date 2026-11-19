@@ -30,7 +30,7 @@ function AddActivity({ reload }) {
     navigate('/activities')
 }
     return (
-        <main>
+        <main className="add-activity-page">
             <h1>Add a Family Activity</h1>
             <p>Share a new activity for your family to enjoy!</p>
             <form onSubmit={handleSubmit}>

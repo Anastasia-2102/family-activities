@@ -1,11 +1,11 @@
 function Activities( {data, error}) {
     return (
-        <main>
+        <main className="activities-page">
             <h1>Family Activities</h1>
             <p>Explore activities for the whole family!</p>
 
-            <p>{error}</p>
-            <p>{data.length} activities found</p>
+            <p className="error-message">{error}</p>
+            <p className="activities-count">{data.length} activities found</p>
 
             {data.map((activity) => (
                 <div className="activity-card" key={activity.id}>
