@@ -4,6 +4,11 @@ import { supabase } from '../utils/supabase'
 function Activities( {data, error, reload}) {
     const [searchTerm, setSearchTerm] = useState('')
     const deleteActivity = async (id) => {
+        const confirmed = window.confirm(
+            "Are you sure you want to delete this activity?"
+        )
+        if (!confirmed)
+            return
         const {error} = await supabase
             .from('activities')
             .delete()
