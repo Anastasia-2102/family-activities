@@ -19,3 +19,30 @@
   color: vars.$card-text;
   font-size: 20px;
 }
+
+.activity-card .edit-button {
+  background-color: #7c3aed;
+}
+
+.activity-card .delete-button {
+  background-color: #dc2626;
+}
+
+.activity-card .save-button {
+  background-color: #16a34a;
+}
+
+.activity-card .cancel-button {
+  background-color: #9ca3af;
+}
+
+.activity-card button {
+  padding: 8px 16px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
