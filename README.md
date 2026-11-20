@@ -14,16 +14,17 @@ Parents need an easy way to find and organize family activities because planning
 2. A visitor can add a new activity.
 3. A visitor can search and filter activities.
 
-## Out of Scope
-- User accounts
-- Online payments
-- Reviews and ratings
+## Left Out
+- User accounts - not needed because visitors can browse activities without signing in.
+- Reviews and ratings - not included in this version to keep the app simple.
 
 ## Database
 The app uses a Supabase table called `activities`.
 
 | Column | Type |
 |---|---|
+| id | int8 |
+| created_at | timestamptz |
 | activity_name | text |
 | location | text |
 | price | int4 |
@@ -31,7 +32,11 @@ The app uses a Supabase table called `activities`.
 
 ## How It Works
 
-The app is built with React and uses Supabase to store family activities. The `useTable` hook loads activity records from the `activities` table when the page opens. React displays the activities using `map()` and shows the total number of activities on the page.
+The app is built with React and uses Supabase to store family activities. The `useTable` hook loads activity records from the `activities` table when the page opens. React displays the activities using `map()`. Visitors can add, search, edit, and delete activities. The app also shows the total number of activities on the page.
+
+## Changes Since Week 7
+
+Since Week 7, I added activity cards, a search bar, and a counter showing how many activities were found. I also added the ability to delete and edit activities, with Save Changes and Cancel buttons.
 
 ## Wireframe
 See `wireframe.png` for the app layout.

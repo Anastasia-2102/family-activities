@@ -1,0 +1,48 @@
+@use '../abstracts/variables' as vars;
+
+.activity-card {
+  border: 1px solid vars.$card-border;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  background-color: vars.$card-background;
+}
+
+.activity-card h2 {
+  margin-top: 0;
+  color: vars.$card-heading;
+  margin-bottom: 12px;
+}
+
+.activity-card p {
+  margin: 8px 0;
+  color: vars.$card-text;
+  font-size: 20px;
+}
+
+.activity-card .edit-button {
+  background-color: #7c3aed;
+}
+
+.activity-card .delete-button {
+  background-color: #dc2626;
+}
+
+.activity-card .save-button {
+  background-color: #16a34a;
+}
+
+.activity-card .cancel-button {
+  background-color: #9ca3af;
+}
+
+.activity-card button {
+  padding: 8px 16px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
