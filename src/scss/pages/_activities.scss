@@ -1,5 +1,16 @@
 .activities-page {
     padding: 30px 20px;
+    font-size: 20px;
+
+    input {
+        margin-top: 15px;
+        width: 100%;
+        max-width: 450px;
+        padding: 12px;
+        font-size: 18px;
+        border: 1px solid #d8c2ff;
+        border-radius: 8px;
+        }
 
 .activities-count {
     margin: 20px 0;
