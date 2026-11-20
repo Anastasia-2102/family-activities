@@ -1,13 +1,29 @@
+import { useState } from 'react'
+
 function Activities( {data, error}) {
+    const [searchTerm, setSearchTerm] = useState('')
+    const filteredActivities = data.filter((activity) => 
+        activity.activity_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        activity.location.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+
     return (
         <main className="activities-page">
             <h1>Family Activities</h1>
             <p>Explore activities for the whole family!</p>
+            <input
+                type="text"
+                placeholder="Search by activity or location..."
+                value={searchTerm}
+                onChange={(event) => setSearchTerm(event.target.value)}
+            />
 
             <p className="error-message">{error}</p>
-            <p className="activities-count">{data.length} activities found</p>
+            <p className="activities-count">
+                {filteredActivities.length} activities found
+            </p>
 
-            {data.map((activity) => (
+            {filteredActivities.map((activity) => (
                 <div className="activity-card" key={activity.id}>
                     <h2>{activity.activity_name}</h2>
                     <p>Location: {activity.location}</p>
