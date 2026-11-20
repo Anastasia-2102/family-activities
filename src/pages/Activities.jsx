@@ -60,7 +60,7 @@ function Activities( {data, error, reload}) {
             {filteredActivities.map((activity) => (
                 <div className="activity-card" key={activity.id}>
                     <h2>{activity.activity_name}</h2>
-                    {editingActivity && (
+                    {editingActivity?.id ===activity.id && (
                 <form>
                     <label>Activity Name:</label>
                     <input

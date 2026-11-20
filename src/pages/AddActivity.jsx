@@ -31,9 +31,9 @@ function AddActivity({ reload }) {
     return
 }
 
-    // Refresh the activity list and show a success message
+    // Refresh the activity list and navigate to Activities page
     reload()
-    setSuccess('Activity added successfully!')
+    navigate('/activities')
 }
     return (
         <main className="add-activity-page">
