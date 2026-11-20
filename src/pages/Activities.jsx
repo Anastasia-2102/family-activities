@@ -1,7 +1,20 @@
 import { useState } from 'react'
+import { supabase } from '../utils/supabase'
 
-function Activities( {data, error}) {
+function Activities( {data, error, reload}) {
     const [searchTerm, setSearchTerm] = useState('')
+    const deleteActivity = async (id) => {
+        const {error} = await supabase
+            .from('activities')
+            .delete()
+            .eq('id', id)
+        if (error) {
+            console.error(error)
+            return
+
+        }
+        reload()
+    }
     const filteredActivities = data.filter((activity) => 
         activity.activity_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         activity.location.toLowerCase().includes(searchTerm.toLowerCase())
@@ -29,6 +42,12 @@ function Activities( {data, error}) {
                     <p>Location: {activity.location}</p>
                     <p>Price: ${activity.price}</p>
                     <p>Date: {activity.date}</p>
+                    <button
+                        type="button"
+                        onClick={() => deleteActivity(activity.id)}
+                    >
+                        Delete
+                    </button>
                 </div>
                 
             ))}

@@ -21,7 +21,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route 
         path="/activities" 
-        element={ <Activities data={data} error={error} />}
+        element={ <Activities data={data} error={error} reload={reload} />}
       />
       <Route 
         path="/add-activity" 
