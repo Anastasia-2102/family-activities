@@ -8,7 +8,6 @@ function AddActivity({ reload }) {
     const [price, setPrice] = useState('')
     const [date, setDate] = useState('')
     const [error, setError] = useState('')
-    const [success, setSuccess] = useState('')
 
     // Handle form submission and save the new activity to Supabase
     const handleSubmit = async (event) => {
@@ -41,7 +40,6 @@ function AddActivity({ reload }) {
             <p>Share a new activity for your family to enjoy!</p>
 
             {error && <p className="error-message">{error}</p>}
-            {success && <p className="success-message">{success}</p>}
 
             <form onSubmit={handleSubmit}>
                 <label>Activity Name:</label>
